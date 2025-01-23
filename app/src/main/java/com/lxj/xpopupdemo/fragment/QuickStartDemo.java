@@ -324,7 +324,7 @@ public class QuickStartDemo extends BaseFragment implements View.OnClickListener
             case R.id.tv1: //依附于某个View的Attach类型弹窗
             case R.id.tv2:
             case R.id.tv3:
-                AttachPopupView attachPopupView = new XPopup.Builder(getContext())
+               /* AttachPopupView attachPopupView = new XPopup.Builder(getContext())
                         .hasStatusBarShadow(false)
                         .isRequestFocus(false)
                         .isCoverSoftInput(true)
@@ -333,17 +333,16 @@ public class QuickStartDemo extends BaseFragment implements View.OnClickListener
                         .asAttachList(new String[]{"分享", "编辑", "不带icon", "分享分享分享",
                                 },
                                 new int[]{R.mipmap.ic_launcher_round, R.mipmap.ic_launcher_round},
-                                (position, text) -> toast("click " + text), 0, 0/*, Gravity.LEFT*/);
-                attachPopupView.show();
-                /*new XPopup.Builder(getContext())
+                                (position, text) -> toast("click " + text), 0, 0*//*, Gravity.LEFT*//*);
+                attachPopupView.show();*/
+                new XPopup.Builder(getContext())
                         .isDestroyOnDismiss(true) //对于只使用一次的弹窗，推荐设置这个
-                        .offsetX(50) //偏移10
-                        .offsetY(10)  //往下偏移10
-                        .popupPosition(PopupPosition.Right) //手动指定位置，有可能被遮盖
+                        .popupPosition(PopupPosition.Bottom) //手动指定位置，有可能被遮盖
                         .hasShadowBg(false) // 去掉半透明背景
+                        .popupAnimation(PopupAnimation.NoAnimation)
                         .atView(v)
-                        .asCustom(new CustomAttachPopup(getContext()))
-                        .show();*/
+                        .asCustom(new CustomAttachPopup2(getContext()))
+                        .show();
                 break;
             case R.id.btnAttachPopup1: //水平方向的Attach弹窗，就像微信朋友圈的点赞弹窗那样
                 new XPopup.Builder(getContext())

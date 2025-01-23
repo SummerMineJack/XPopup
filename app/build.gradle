@@ -2,8 +2,8 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 30
+    namespace "com.lxj.xpopupdemo"
     defaultConfig {
-        applicationId "com.lxj.xpopupdemo"
         minSdkVersion 19
         targetSdkVersion 30
         versionCode 6
